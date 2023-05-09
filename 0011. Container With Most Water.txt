@@ -1,0 +1,16 @@
+func maxArea(height []int) int {
+    var l, r, max, curr = 0, len(height) - 1, 0, 0
+    for l < r {
+        if height[l] < height[r] {
+            curr = height[l] * (r - l)
+            l++
+        } else {
+            curr = height[r] * (r - l)
+            r--
+        }
+        if max < curr {
+            max = curr
+        }
+    }
+    return max
+}
